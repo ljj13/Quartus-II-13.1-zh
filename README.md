@@ -64,6 +64,15 @@ Quartus 的 Qt 4 界面用 `codecForCStrings` 把 C 字符串转 `QString`——
 注入 UTF-8 编解码设置，再把译文写入 DLL 新增的 `.zhcn` 节（自定义 QCN1 文本池，
 带 DIR64 重定位），并将原英文串的全部代码/数据引用改指向中文文本。
 
+## 文档
+
+- [docs/translations.csv](docs/translations.csv) —— 全部 **198 条**词条的
+  原文 / 译文对照表（`file, kind, original, translation, rva`；kind =
+  `pool` 词条池 / `in_place` 原位覆写），可由
+  [tools/extract_translations.py](tools/extract_translations.py) 从成品二进制反提取复现
+- [docs/zhcn-format.md](docs/zhcn-format.md) —— `.zhcn` 节 / QCN1 文本池格式规格
+  与三类修改（池重定向、原位覆写、编解码注入）的落盘方式
+
 ## 声明
 
 本项目仅供个人学习交流使用，请支持正版。Quartus、Altera 及相关标识为

@@ -1,0 +1,199 @@
+﻿file,kind,original,translation,rva
+sys_qui.dll,in_place,&Assignments,分配(&A),0xd49e8
+sys_qui.dll,pool,&Edit,编辑(&E),0xd6068
+sys_qui.dll,in_place,Recent Pro&jects,最近工程(&J),0xd6c00
+sys_qui.dll,pool,Recent F&iles,最近文件(&I),0xd6c18
+sys_qui.dll,pool,Create &/ Update,创建/更新(&/),0xd70a8
+sys_qui.dll,pool,&File,文件(&F),0xd78f8
+sys_qui.dll,pool,&About %1,关于 %1(&A),0xde0a0
+sys_qui.dll,pool,Altera on the &Web,Altera 网络资源(&W),0xdebf8
+sys_qui.dll,in_place,PD&F Tutorials,PDF 教程(&F),0xdf2c8
+sys_qui.dll,pool,&Help,帮助(&H),0xdf69c
+sys_qui.dll,pool,St&art,开始(&A),0xe4b2c
+sys_qui.dll,in_place,P&rocessing,处理(&R),0xe4da0
+sys_qui.dll,in_place,&Hierarchy,层次(&H),0xe5c58
+sys_qui.dll,pool,&Project,工程(&P),0xe6a90
+sys_qui.dll,pool,Syst&em Console,系统控制台(&E),0xed760
+sys_qui.dll,pool,Netlist &Viewers,网表查看器(&V),0xee398
+sys_qui.dll,pool,&Advisors,顾问(&A),0xeed40
+sys_qui.dll,pool,Run Sim&ulation Tool,运行仿真工具(&U),0xef2e8
+sys_qui.dll,pool,&Tools,工具(&T),0xef300
+sys_qui.dll,pool,Utilit&y Windows,实用工具窗口(&Y),0xefb28
+sys_qui.dll,pool,&View,视图(&V),0xefb80
+sys_qui.dll,pool,&Window,窗口(&W),0xf03e8
+gcl_afcq.dll,pool,Zoom &Out,缩小(&O),0xd6918
+gcl_afcq.dll,pool,Zoom &In,放大(&I),0xd6928
+gcl_afcq.dll,pool,&Fit in Window,适应窗口(&F),0xd6938
+gcl_afcq.dll,pool,W&hat's New,新增内容(&H),0xd69f0
+gcl_afcq.dll,pool,Start &VQM Writer,开始 VQM 编写器(&V),0xd6b70
+gcl_afcq.dll,in_place,&Update Memory Initialization File,更新存储器初始化文件(&U),0xd6c58
+gcl_afcq.dll,pool,&Undo,撤销(&U),0xd6cac
+gcl_afcq.dll,in_place,Getting Started &Tutorial,入门教程(&T),0xd6cb8
+gcl_afcq.dll,pool,TimeQuest Timing Analyzer &Wizard...,TimeQuest 时序分析器向导(&W)...,0xd6d50
+gcl_afcq.dll,pool,Tas&ks,任务(&K),0xd6dbc
+gcl_afcq.dll,pool,Ti&ps and Tricks,技巧与窍门(&P),0xd6dc8
+gcl_afcq.dll,pool,&Tile,平铺(&T),0xd6e10
+gcl_afcq.dll,pool,W&ord Wrap,自动换行(&O),0xd6e18
+gcl_afcq.dll,pool,Show &White Space,显示空白字符(&W),0xd6e70
+gcl_afcq.dll,in_place,Show &Line Numbers,显示行号(&L),0xd6e88
+gcl_afcq.dll,pool,Show &Indentation Guide,显示缩进参考线(&I),0xd6ea0
+gcl_afcq.dll,pool,Tcl Scr&ipts...,Tcl 脚本(&I)...,0xd6fe8
+gcl_afcq.dll,pool,&Tcl Console,Tcl 控制台(&T),0xd6ff8
+gcl_afcq.dll,pool,Start Test &Bench Template Writer,开始 Test Bench 模板编写器(&B),0xd7008
+gcl_afcq.dll,pool,&TimeQuest Timing Analyzer,TimeQuest 时序分析器(&T),0xd7030
+gcl_afcq.dll,pool,Task Window,任务窗口,0xd7050
+gcl_afcq.dll,pool,SS&N Analyzer Tool,SSN 分析工具(&N),0xd71d8
+gcl_afcq.dll,in_place,&Stop Processing,停止处理(&S),0xd7210
+gcl_afcq.dll,pool,&Status,状态(&S),0xd7228
+gcl_afcq.dll,pool,Start TimeQuest Timing Analyzer,开始 TimeQuest 时序分析,0xd7250
+gcl_afcq.dll,in_place,Start S&creen,起始页(&C),0xd7270
+gcl_afcq.dll,pool,Start Rapid Recompile,开始快速重编译,0xd7280
+gcl_afcq.dll,pool,Start Partition Merge,开始分区合并,0xd7298
+gcl_afcq.dll,pool,Start EDA &Netlist Writer,开始 EDA 网表编写器(&N),0xd72b0
+gcl_afcq.dll,pool,Start Analysis && Synt&hesis,开始分析与综合(&H),0xd72d0
+gcl_afcq.dll,pool,Start &Fitter,开始 Fitter(&F),0xd72f0
+gcl_afcq.dll,pool,Start &Design Assistant,开始设计助理(&D),0xd7300
+gcl_afcq.dll,in_place,Start &Compilation,开始编译(&C),0xd7318
+gcl_afcq.dll,pool,Start &Assembler,开始汇编(&A),0xd7330
+gcl_afcq.dll,pool,Start SSN Analy&zer,开始 SSN 分析器(&Z),0xd7348
+gcl_afcq.dll,pool,&SignalProbe Pins...,SignalProbe 引脚(&S)...,0xd7528
+gcl_afcq.dll,pool,Start &SignalProbe Compilation,开始 SignalProbe 编译(&S),0xd7540
+gcl_afcq.dll,pool,Show Pin &Types,显示引脚类型(&T),0xd76c0
+gcl_afcq.dll,pool,Pad &View,焊盘视图(&V),0xd7750
+gcl_afcq.dll,pool,Show &Node Names,显示节点名(&N),0xd7760
+gcl_afcq.dll,pool,Board Tra&ce Model,板级走线模型(&C),0xd7b18
+gcl_afcq.dll,pool,Show I/O &Bank Color in Lists,在列表中显示 I/O Bank 颜色(&B),0xd7b30
+gcl_afcq.dll,in_place,Set as Top-Level &Entity,设为顶层实体(&E),0xd7b80
+gcl_afcq.dll,pool,&Settings...,设置(&S)...,0xd7c08
+gcl_afcq.dll,in_place,&Select Highlighted Pins,选择高亮引脚(&S),0xd7c98
+gcl_afcq.dll,in_place,Select &All,全选(&A),0xd7cb8
+gcl_afcq.dll,pool,SignalTap II Logic A&nalyzer,SignalTap II 逻辑分析器(&N),0xd7d18
+gcl_afcq.dll,pool,Save Projec&t,保存工程(&T),0xd7d38
+gcl_afcq.dll,pool,Save &As...,另存为(&A)...,0xd7d60
+gcl_afcq.dll,pool,&Save,保存(&S),0xd7d7c
+gcl_afcq.dll,pool,&Netlist Navigator,网表导航器(&N),0xd7d88
+gcl_afcq.dll,pool,Forwar&d,前进(&D),0xd7e28
+gcl_afcq.dll,pool,&Back,返回(&B),0xd7e64
+gcl_afcq.dll,in_place,Compilation &Report,编译报告(&R),0xd7e90
+gcl_afcq.dll,pool,&Revisions...,修订版本(&R)...,0xd7ef8
+gcl_afcq.dll,in_place,Restore Archi&ved Project...,还原归档工程(&V)...,0xd7f60
+gcl_afcq.dll,in_place,&Resources Window,资源窗口(&R),0xd7f80
+gcl_afcq.dll,in_place,Report Window,报表窗口,0xd7fc8
+gcl_afcq.dll,pool,R&eplace...,替换(&E)...,0xd7fd8
+gcl_afcq.dll,in_place,&Remove Assignments...,移除分配(&R)...,0xd80d0
+gcl_afcq.dll,pool,Release &Notes,发行说明(&N),0xd80e8
+gcl_afcq.dll,in_place,Upgr&ade IP Components...,升级 IP 组件(&A)...,0xd80f8
+gcl_afcq.dll,pool,&Refresh,刷新(&R),0xd8118
+gcl_afcq.dll,pool,In-System Memor&y Content Editor,系统内存储器内容编辑器(&Y),0xd8128
+gcl_afcq.dll,pool,&Redo,重做(&R),0xd814c
+gcl_afcq.dll,pool,&Readme File,自述文件(&R),0xd81c0
+gcl_afcq.dll,pool,&Search,搜索(&S),0xd8270
+gcl_afcq.dll,pool,&PowerPlay Power Analyzer Tool,PowerPlay 功耗分析工具(&P),0xd82b8
+gcl_afcq.dll,in_place,P&roperties,属性(&R),0xd8308
+gcl_afcq.dll,pool,Project &Navigator,工程导航器(&N),0xd8328
+gcl_afcq.dll,pool,&Import Database...,导入数据库(&I)...,0xd8340
+gcl_afcq.dll,pool,E&xport Database...,导出数据库(&X)...,0xd8358
+gcl_afcq.dll,pool,Add Curre&nt File to Project,将当前文件添加到工程(&N),0xd8370
+gcl_afcq.dll,pool,Print Pre&view,打印预览(&V),0xd8390
+gcl_afcq.dll,pool,&Print...,打印(&P)...,0xd83d0
+gcl_afcq.dll,pool,Pi&n Planner,引脚规划器(&N),0xd83f0
+gcl_afcq.dll,pool,Start &PowerPlay Power Analyzer,开始 PowerPlay 功耗分析器(&P),0xd8400
+gcl_afcq.dll,pool,Find S&wappable Pins,查找可交换引脚(&W),0xd8420
+gcl_afcq.dll,pool,Pin &Migration Window,引脚迁移窗口(&M),0xd8458
+gcl_afcq.dll,pool,Pin &Legend Window,引脚图例窗口(&L),0xd8470
+gcl_afcq.dll,pool,&Pin Finder,引脚查找器(&P),0xd8488
+gcl_afcq.dll,pool,Assig&n Up,向上分配(&N),0xd84a8
+gcl_afcq.dll,pool,Assign Ri&ght,向右分配(&G),0xd84b8
+gcl_afcq.dll,pool,Assign &One,逐个分配(&O),0xd84c8
+gcl_afcq.dll,pool,Assign &Left,向左分配(&L),0xd84d8
+gcl_afcq.dll,pool,Assign Do&wn,向下分配(&W),0xd84e8
+gcl_afcq.dll,pool,&Programmer,编程器(&P),0xd84f8
+gcl_afcq.dll,pool,&JTAG Chain Debugger,JTAG 链调试器(&J),0xd8508
+gcl_afcq.dll,pool,&Paste,粘贴(&P),0xd8564
+gcl_afcq.dll,pool,Page Set&up...,页面设置(&U)...,0xd8580
+gcl_afcq.dll,in_place,Organi&ze Quartus II Settings File,整理 Quartus II 设置文件(&Z),0xd85b0
+gcl_afcq.dll,pool,&Options...,选项(&O)...,0xd85d8
+gcl_afcq.dll,pool,Open P&roject...,打开工程(&R)...,0xd85f8
+gcl_afcq.dll,pool,&Open...,打开(&O)...,0xd8618
+gcl_afcq.dll,pool,&Timing Optimization Advisor,时序优化顾问(&T),0xd8638
+gcl_afcq.dll,pool,&Resource Optimization Advisor,资源优化顾问(&R),0xd8668
+gcl_afcq.dll,pool,&Power Optimization Advisor,功耗优化顾问(&P),0xd8688
+gcl_afcq.dll,pool,Pi&n Advisor,引脚顾问(&N),0xd86a8
+gcl_afcq.dll,pool,&Incremental Compilation Advisor,增量编译顾问(&I),0xd86c8
+gcl_afcq.dll,pool,&Compilation Time Advisor,编译时间顾问(&C),0xd8718
+gcl_afcq.dll,pool,Technology Map Viewer (Post-&Mapping),技术映射查看器（映射后）(&M),0xd8738
+gcl_afcq.dll,pool,&Technology Map Viewer (Post-Fitting),技术映射查看器（适配后）(&T),0xd8760
+gcl_afcq.dll,pool,&RTL Viewer,RTL 查看器(&R),0xd8788
+gcl_afcq.dll,pool,&State Machine Viewer,状态机查看器(&S),0xd8798
+gcl_afcq.dll,pool,Node &Finder,节点查找器(&F),0xd8a08
+gcl_afcq.dll,pool,Nios II So&ftware Build Tools for Eclipse,Nios II 软件构建工具（Eclipse）(&F),0xd8bd0
+gcl_afcq.dll,pool,New Project &Wizard...,新建工程向导(&W)...,0xd8c10
+gcl_afcq.dll,pool,&New...,新建(&N)...,0xd8c58
+gcl_afcq.dll,pool,&Messages,消息(&M),0xd8cc0
+gcl_afcq.dll,pool,Mega&Wizard Plug-In Manager,MegaWizard 插件管理器(&W),0xd8d40
+gcl_afcq.dll,pool,&LogicLock Regions Window,LogicLock 区域窗口(&L),0xd8dc8
+gcl_afcq.dll,pool,Live I/O Chec&k Status Window,实时 I/O 检查状态窗口(&K),0xd8fc0
+gcl_afcq.dll,pool,Enable &Live I/O Check,启用实时 I/O 检查(&L),0xd8fe0
+gcl_afcq.dll,pool,&License Setup...,许可证设置(&L)...,0xd8ff8
+gcl_afcq.dll,in_place,&Design Partition Planner,设计分区规划器(&D),0xd9050
+gcl_afcq.dll,pool,Launch Design Space E&xplorer,启动设计空间探索器(&X),0xd9080
+gcl_afcq.dll,in_place,Install Devices...,安装器件...,0xd90a0
+gcl_afcq.dll,pool,Start I/&O Assignment Analysis,开始 I/O 分配分析(&O),0xd90b8
+gcl_afcq.dll,in_place,I&mport Design Partition...,导入设计分区(&M)...,0xd9208
+gcl_afcq.dll,in_place,Imp&ort Assignments...,导入分配(&O)...,0xd9228
+gcl_afcq.dll,pool,Start Hierarchy Elaboration,开始层次推演,0xd9280
+gcl_afcq.dll,pool,&Message List,消息列表(&M),0xd9378
+gcl_afcq.dll,in_place,&EDA Interfaces,EDA 接口(&E),0xd9388
+gcl_afcq.dll,pool,&Devices and Adapters,器件与适配器(&D),0xd9398
+gcl_afcq.dll,pool,&Groups List,组列表(&G),0xd93b8
+gcl_afcq.dll,pool,&Go To...,转到(&G)...,0xd9438
+gcl_afcq.dll,in_place,&Generate Tcl File for Project...,生成工程 Tcl 文件(&G)...,0xd9448
+gcl_afcq.dll,in_place,Generate PowerPlay Early Po&wer Estimator File,生成 PowerPlay 早期功耗估算文件(&W),0xd9470
+gcl_afcq.dll,in_place,Generate Design Partition &Scripts...,生成设计分区脚本(&S)...,0xd95c0
+gcl_afcq.dll,pool,Find Ne&xt,查找下一个(&X),0xd97f8
+gcl_afcq.dll,pool,&Find...,查找(&F)...,0xd9808
+gcl_afcq.dll,in_place,&File Properties...,文件属性(&F)...,0xd9910
+gcl_afcq.dll,in_place,Feedback,反馈,0xd9948
+gcl_afcq.dll,in_place,Export &Design Partition...,导出设计分区(&D)...,0xd9aa0
+gcl_afcq.dll,in_place,E&xport Assignments...,导出分配(&X)...,0xd9ac0
+gcl_afcq.dll,pool,E&xit,退出(&X),0xd9b44
+gcl_afcq.dll,in_place,Launch Simulation Library &Compiler,启动仿真库编译器(&C),0xd9b50
+gcl_afcq.dll,pool,Start Equation Writer (Post-fitting),开始等式编写器（适配后）,0xd9b78
+gcl_afcq.dll,pool,Start Equation Writer (Post-synthesis),开始等式编写器（综合后）,0xd9ba0
+gcl_afcq.dll,pool,Start EDA S&ynthesis,开始 EDA 综合(&Y),0xd9c30
+gcl_afcq.dll,pool,Sta&rt EDA Physical Synthesis,开始 EDA 物理综合(&R),0xd9c58
+gcl_afcq.dll,pool,Start Early Timing Estimate,开始早期时序估计,0xd9cb0
+gcl_afcq.dll,in_place,Dynamic Synthesis Report,动态综合报告,0xd9ce8
+gcl_afcq.dll,pool,&Device...,器件(&D)...,0xd9da8
+gcl_afcq.dll,pool,&Detach Window,分离窗口(&D),0xd9dd0
+gcl_afcq.dll,in_place,Design Partitions &Window,设计分区窗口(&W),0xd9de0
+gcl_afcq.dll,pool,&Delete,删除(&D),0xd9e80
+gcl_afcq.dll,pool,Cu&t,剪切(&T),0xd9f28
+gcl_afcq.dll,pool,Customi&ze...,自定义(&Z)...,0xd9f60
+gcl_afcq.dll,in_place,Convert Progra&mming Files...,转换编程文件(&M)...,0xda450
+gcl_afcq.dll,pool,C&opy Project...,复制工程(&O)...,0xda498
+gcl_afcq.dll,pool,&Copy,复制(&C),0xda4ac
+gcl_afcq.dll,in_place,C&ontacting Altera,联系 Altera(&O),0xda4b8
+gcl_afcq.dll,in_place,Receive &Compilation Status Notifications,接收编译状态通知(&C),0xda4e0
+gcl_afcq.dll,in_place,Color Settings,颜色设置,0xda510
+gcl_afcq.dll,pool,Clos&e Project,关闭工程(&E),0xda588
+gcl_afcq.dll,pool,Close Al&l,全部关闭(&L),0xda598
+gcl_afcq.dll,pool,&Close,关闭(&C),0xda5a4
+gcl_afcq.dll,in_place,Clear &Highlighted Pins,清除引脚高亮(&H),0xda620
+gcl_afcq.dll,pool,C&lean Project...,清理工程(&L)...,0xda658
+gcl_afcq.dll,pool,Start &Check && Save All Netlist Changes,开始检查并保存全部网表更改(&C),0xda690
+gcl_afcq.dll,pool,Change Mana&ger,更改管理器(&G),0xda6c0
+gcl_afcq.dll,pool,&Cascade,层叠(&C),0xda6e0
+gcl_afcq.dll,in_place,In&-System Sources and Probes Editor,系统内源与探针编辑器(&-),0xda740
+gcl_afcq.dll,in_place,Bird's Eye View,鸟瞰图,0xda768
+gcl_afcq.dll,in_place,&Back-Annotate Assignments...,反标注分配(&B)...,0xda778
+gcl_afcq.dll,pool,&Attach Window,附加窗口(&A),0xda800
+gcl_afcq.dll,pool,Logic Analyzer Interface Edito&r,逻辑分析仪接口编辑器(&R),0xda810
+gcl_afcq.dll,in_place,Assignment &Groups...,分配组(&G)...,0xda860
+gcl_afcq.dll,pool,&Assignment Editor,分配编辑器(&A),0xda898
+gcl_afcq.dll,in_place,Archive &Project...,归档工程(&P)...,0xda8e0
+gcl_afcq.dll,pool,Analyze Current &File,分析当前文件(&F),0xda938
+gcl_afcq.dll,pool,Start Analysis && &Elaboration,开始分析与推演(&E),0xda980
+gcl_afcq.dll,pool,Add/Remove &Files in Project...,添加/移除工程文件(&F)...,0xdaaa0
+gcl_afcq.dll,pool,C&hip Planner,芯片规划器(&H),0xdaad0
+saui_aseq.dll,in_place,Information Bar,信息栏,0x42a08
