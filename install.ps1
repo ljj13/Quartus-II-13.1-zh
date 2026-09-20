@@ -11,15 +11,9 @@ $PkgDir = Join-Path $Root "zhcn-dlls"
 $Files = @("sys_qui.dll", "gcl_afcq.dll", "saui_aseq.dll")
 $BackupDirName = "zh_CN_backup"
 
-# 原版 (pristine) SHA256 —— 安装器以此确认目标安装是本补丁对应的原版 13.1 64 位
-$PristineSha = @{
-    "sys_qui.dll"  = "bce217b64891261a89a9b5d7ba837c414671d1aba6470d6bce37a7f96cb36f59"
-    "gcl_afcq.dll" = "f6f29e363d18032ccde8494717a9501eb90819277242a602537f91ba65df7e44"
-    "saui_aseq.dll"= "9df5423121834f8cbda17ea1eea1f06b4e6f4d52571b5d77b666e248078f5a65"
-}
-
-function Get-FileSha256([string]$Path) {
-    (Get-FileHash -Algorithm SHA256 -LiteralPath $Path).Hash.ToLower()
+function FilesEqual([string]$A, [string]$B) {
+    [System.Linq.Enumerable]::SequenceEqual(
+        [System.IO.File]::ReadAllBytes($A), [System.IO.File]::ReadAllBytes($B))
 }
 
 function Find-QuartusBin64 {
@@ -55,57 +49,39 @@ if ($bin -eq "" -or -not (Test-Path (Join-Path $bin "quartus.exe"))) {
 }
 Write-Host "[i] Quartus bin64: $bin"
 
-# ---------- 2) 校验当前状态 ----------
-$state = @{}
+# ---------- 2) 已安装检测（幂等） ----------
+$allSame = $true
 foreach ($f in $Files) {
-    $target = Join-Path $bin $f
-    if (-not (Test-Path $target)) { Write-Host "[X] 缺少文件: $target" -ForegroundColor Red; exit 1 }
-    $state[$f] = Get-FileSha256 $target
+    if (-not (FilesEqual (Join-Path $bin $f) (Join-Path $PkgDir $f))) { $allSame = $false }
 }
-$patchedSha = @{}
-foreach ($f in $Files) { $patchedSha[$f] = Get-FileSha256 (Join-Path $PkgDir $f) }
+if ($allSame) { Write-Host "[i] 汉化包已经安装，无需重复操作。" -ForegroundColor Yellow; exit 0 }
 
-$allPatched = $true; $allPristine = $true
-foreach ($f in $Files) {
-    if ($state[$f] -ne $patchedSha[$f]) { $allPatched = $false }
-    if ($state[$f] -ne $PristineSha[$f]) { $allPristine = $false }
-}
-if ($allPatched) { Write-Host "[i] 汉化包已经安装，无需重复操作。" -ForegroundColor Yellow; exit 0 }
-if (-not $allPristine) {
-    Write-Host "[X] 目标 DLL 与原版 Quartus II 13.1 (64-bit) 不匹配，拒绝安装。" -ForegroundColor Red
-    Write-Host "    本补丁只能安装在未被修改过的原版 13.1 64 位上。" -ForegroundColor Red
-    foreach ($f in $Files) { Write-Host ("    {0}: {1}" -f $f, $state[$f]) }
-    exit 1
-}
-
-# ---------- 3) 备份原版（不覆盖已有备份） ----------
+# ---------- 3) 备份当前文件（不覆盖已有备份） ----------
 $backupDir = Join-Path $bin $BackupDirName
 $manifest = Join-Path $backupDir "manifest.json"
 if (Test-Path $manifest) {
     Write-Host "[i] 已存在原版备份 ($BackupDirName)，保留不动。" -ForegroundColor Yellow
 } else {
     New-Item -ItemType Directory -Path $backupDir | Out-Null
+    foreach ($f in $Files) {
+        Copy-Item (Join-Path $bin $f) (Join-Path $backupDir $f)
+    }
     $doc = [ordered]@{
         backup_at_utc = (Get-Date).ToUniversalTime().ToString("o")
         quartus_bin64 = $bin
-        files = [ordered]@{}
-    }
-    foreach ($f in $Files) {
-        Copy-Item (Join-Path $bin $f) (Join-Path $backupDir $f)
-        $doc.files[$f] = $state[$f]
+        files = $Files
     }
     $doc | ConvertTo-Json | Set-Content -Encoding UTF8 $manifest
-    Write-Host "[+] 原版已备份到 $backupDir"
+    Write-Host "[+] 已备份当前文件到 $backupDir"
 }
 
-# ---------- 4) 安装并校验 ----------
+# ---------- 4) 安装并校验写入 ----------
 foreach ($f in $Files) {
     Copy-Item (Join-Path $PkgDir $f) (Join-Path $bin $f) -Force
-    $now = Get-FileSha256 (Join-Path $bin $f)
-    if ($now -ne $patchedSha[$f]) {
+    if (-not (FilesEqual (Join-Path $bin $f) (Join-Path $PkgDir $f))) {
         Write-Host "[X] 写入校验失败: $f" -ForegroundColor Red; exit 1
     }
 }
 Write-Host ""
 Write-Host "[OK] 汉化安装完成。启动 Quartus II 即可看到中文菜单。" -ForegroundColor Green
-Write-Host "     如需还原英文原版，运行 卸载.bat 即可。" -ForegroundColor Green
+Write-Host "     如需还原原版文件，运行 卸载.bat 即可。" -ForegroundColor Green

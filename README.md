@@ -23,7 +23,8 @@
 
 ## 环境要求
 
-- **Quartus II 13.1（64 位）**，且从未被修改过原版 DLL（安装器会做 SHA256 校验，不匹配即拒绝安装）
+- **Quartus II 13.1（64 位）**（针对未修改的原版 13.1 制作；若 DLL 曾被其他补丁改动过，
+  建议先还原，安装器会自动备份当前文件、卸载时原样恢复）
 - Windows 系统；安装/卸载前**必须关闭 Quartus**
 - 对 Quartus 安装目录的写入权限（装在 `C:\altera` 等位置时可能需要管理员权限运行）
 
@@ -56,16 +57,6 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -QuartusBin64 
 - `撤销/重做` 等由 Qt 框架提供的标准 QAction 文本（随 Qt 语言包显示，非本包来源）；
 - 走 `QObject::tr()` 翻译路径的少量字符串（不受本方案控制）；
 - 部分英文项本就不在以上三个窗口的菜单内（如 `Show ▸`、`All Pins List`）。
-
-## 校验值（SHA256）
-
-| 文件 | 原版 | 汉化版 |
-|---|---|---|
-| `sys_qui.dll` | `bce217b6…cb36f59` | `1061606501b7bb72…` |
-| `gcl_afcq.dll` | `f6f29e36…5df7e44` | `2f3718623ff1fb2c…` |
-| `saui_aseq.dll` | `9df54231…078f5a65` | `532e0909ab6db66d…` |
-
-完整值内置于 `install.ps1` / `uninstall.ps1`，脚本每次操作前后都会自动校验。
 
 ## 实现原理（一句话版）
 

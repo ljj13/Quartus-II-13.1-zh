@@ -1,4 +1,4 @@
-﻿# Quartus II 13.1 (64-bit) 简体中文汉化包 - 卸载脚本（还原英文原版）
+﻿# Quartus II 13.1 (64-bit) 简体中文汉化包 - 卸载脚本（还原安装前的文件）
 # 用法: powershell -NoProfile -ExecutionPolicy Bypass -File uninstall.ps1 [-QuartusBin64 "D:\altera\13.1\quartus\bin64"]
 param(
     [string]$QuartusBin64 = ""
@@ -11,8 +11,9 @@ $PkgDir = Join-Path $Root "zhcn-dlls"
 $Files = @("sys_qui.dll", "gcl_afcq.dll", "saui_aseq.dll")
 $BackupDirName = "zh_CN_backup"
 
-function Get-FileSha256([string]$Path) {
-    (Get-FileHash -Algorithm SHA256 -LiteralPath $Path).Hash.ToLower()
+function FilesEqual([string]$A, [string]$B) {
+    [System.Linq.Enumerable]::SequenceEqual(
+        [System.IO.File]::ReadAllBytes($A), [System.IO.File]::ReadAllBytes($B))
 }
 
 function Find-QuartusBin64 {
@@ -43,40 +44,31 @@ if ($bin -eq "" -or -not (Test-Path (Join-Path $bin "quartus.exe"))) {
 }
 Write-Host "[i] Quartus bin64: $bin"
 
-# ---------- 2) 校验当前是汉化版（幂等：已是原版则直接收尾） ----------
-$patchedSha = @{}
-foreach ($f in $Files) { $patchedSha[$f] = Get-FileSha256 (Join-Path $PkgDir $f) }
-$anyPatched = $false
-foreach ($f in $Files) {
-    if ((Get-FileSha256 (Join-Path $bin $f)) -eq $patchedSha[$f]) { $anyPatched = $true }
-}
-if (-not $anyPatched) {
-    Write-Host "[i] 当前未安装汉化包，无需卸载。" -ForegroundColor Yellow
+# ---------- 2) 备份目录 ----------
+$backupDir = Join-Path $bin $BackupDirName
+$manifest = Join-Path $backupDir "manifest.json"
+
+# ---------- 3) 已安装检测（无备份目录 → 视为未安装） ----------
+if (-not (Test-Path $manifest)) {
+    $allSame = $true
+    foreach ($f in $Files) {
+        if (-not (FilesEqual (Join-Path $bin $f) (Join-Path $PkgDir $f))) { $allSame = $false }
+    }
+    if ($allSame) {
+        Write-Host "[i] 当前未安装汉化包，无需卸载。" -ForegroundColor Yellow
+        exit 0
+    }
+    Write-Host "[i] 未检测到本补丁的备份目录 ($BackupDirName) —— 大概率从未安装过，无需卸载。" -ForegroundColor Yellow
+    Write-Host "    若你曾安装并手动删除了备份目录，自动还原已不可能，请改用 Quartus 安装包修复。" -ForegroundColor Yellow
     exit 0
 }
 
-# ---------- 3) 备份目录与清单 ----------
-$backupDir = Join-Path $bin $BackupDirName
-$manifest = Join-Path $backupDir "manifest.json"
-if (-not (Test-Path $manifest)) {
-    Write-Host "[X] 未找到原版备份 $manifest ，无法安全还原。" -ForegroundColor Red
-    Write-Host "    如果安装后清理过该目录，请改用 Quartus 安装包修复或重装对应组件。" -ForegroundColor Red
-    exit 1
-}
-$doc = Get-Content $manifest -Raw | ConvertFrom-Json
-
-# ---------- 4) 还原原版并校验 ----------
+# ---------- 4) 还原安装前的文件 ----------
 foreach ($f in $Files) {
     $src = Join-Path $backupDir $f
     if (-not (Test-Path $src)) { Write-Host "[X] 备份缺少 $f，中止。" -ForegroundColor Red; exit 1 }
     Copy-Item $src (Join-Path $bin $f) -Force
 }
-foreach ($f in $Files) {
-    $now = Get-FileSha256 (Join-Path $bin $f)
-    if ($now -ne $doc.files.$f) {
-        Write-Host "[X] 还原校验失败: $f" -ForegroundColor Red; exit 1
-    }
-}
 Remove-Item $backupDir -Recurse -Force
 Write-Host ""
-Write-Host "[OK] 已还原英文原版 Quartus II 13.1，备份目录已清理。" -ForegroundColor Green
+Write-Host "[OK] 已还原安装前的文件，备份目录已清理。" -ForegroundColor Green
